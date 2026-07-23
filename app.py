@@ -135,7 +135,7 @@ st.markdown(
     <div class="hero">
 
         <div class="hero-badge">
-            ✨ AI-Powered Career Intelligence
+            AI-Powered Career Intelligence
         </div>
 
         <div class="hero-title">
