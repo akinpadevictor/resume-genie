@@ -28,7 +28,7 @@ initial_sidebar_state="expanded",
 st.markdown(
 """ <style>
 
-```
+
 /* ========================================================
    GLOBAL APP
 ======================================================== */
@@ -397,7 +397,7 @@ textarea {
 </style>
 """,
 unsafe_allow_html=True,
-```
+
 
 )
 
@@ -444,7 +444,6 @@ chat = load_model()
 @st.cache_data(show_spinner=False)
 def extract_resume(file_bytes):
 
-```
 temp_path = None
 
 try:
@@ -475,7 +474,7 @@ finally:
 
     if temp_path and os.path.exists(temp_path):
         os.remove(temp_path)
-```
+
 
 # ============================================================
 
@@ -701,7 +700,7 @@ Rules:
 
 SERVICES = {
 
-```
+
 "Resume Match": {
     "icon": "🎯",
     "description": "Compare your resume to a job description and get a focused match report.",
@@ -762,7 +761,7 @@ SERVICES = {
     "download_label": "📥 Download Advice",
     "mime": "text/markdown",
 },
-```
+
 
 }
 
@@ -786,7 +785,7 @@ st.session_state.result = None
 
 with st.sidebar:
 
-```
+
 st.markdown(
     """
     <div class="sidebar-brand">
@@ -827,7 +826,7 @@ st.caption(
     "💡 Upload your resume and let Resume Genie "
     "help you prepare for your next career opportunity."
 )
-```
+
 
 # ============================================================
 
@@ -848,7 +847,7 @@ st.markdown(
 """ <div class="hero"> <div class="hero-badge">
 ✨ AI-Powered Career Intelligence </div>
 
-```
+
     <div class="hero-title">
         📄 Resume Genie
     </div>
@@ -861,7 +860,7 @@ st.markdown(
 </div>
 """,
 unsafe_allow_html=True,
-```
+
 
 )
 
@@ -894,7 +893,7 @@ f""" <div class="service-card">
 </div>
 """,
 unsafe_allow_html=True,
-```
+
 
 )
 
@@ -925,7 +924,7 @@ job_description = ""
 
 if service.get("needs_job_description"):
 
-```
+
 st.markdown(
     '<div class="section-title">💼 Step 2 — Add the Job Description</div>',
     unsafe_allow_html=True,
@@ -940,7 +939,7 @@ job_description = st.text_area(
         "qualifications, and other details."
     ),
 )
-```
+
 
 # ============================================================
 
@@ -952,7 +951,7 @@ question = ""
 
 if service.get("needs_question"):
 
-```
+
 st.markdown(
     '<div class="section-title">💬 Step 2 — Ask Your Career Question</div>',
     unsafe_allow_html=True,
@@ -966,7 +965,7 @@ question = st.text_area(
         "How can I improve my chances of getting a Data Analyst role?"
     ),
 )
-```
+
 
 # ============================================================
 
@@ -985,7 +984,7 @@ type="primary",
 use_container_width=True,
 ):
 
-```
+
 if uploaded_file is None:
     st.warning("📎 Please upload your resume as a PDF.")
     st.stop()
@@ -1036,7 +1035,7 @@ except Exception as error:
     )
 
     st.exception(error)
-```
+
 
 # ============================================================
 
@@ -1048,7 +1047,7 @@ result = st.session_state.result
 
 if result and result["service"] == service_name:
 
-```
+
 st.markdown(
     f"""
     <div class="result-header">
@@ -1078,7 +1077,7 @@ st.download_button(
     mime=service["mime"],
     use_container_width=True,
 )
-```
+
 
 # ============================================================
 
@@ -1087,8 +1086,7 @@ st.download_button(
 # ============================================================
 
 if not result:
-
-```
+    
 st.divider()
 
 st.markdown(
@@ -1164,7 +1162,7 @@ with col3:
         """,
         unsafe_allow_html=True,
     )
-```
+
 
 # ============================================================
 
@@ -1188,6 +1186,6 @@ st.markdown(
 </div>
 """,
 unsafe_allow_html=True,
-```
+
 
 )
