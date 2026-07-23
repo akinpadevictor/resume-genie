@@ -47,7 +47,7 @@ if not GOOGLE_API_KEY:
 @st.cache_resource
 def load_model():
     return ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash-latest",  # FIX 1: correct model name
+        model="gemini-2.5-flash",  # FIX 1: correct model name
         google_api_key=GOOGLE_API_KEY,    # FIX 2: use the global var directly
         temperature=0.2,
         convert_system_message_to_human=True # helps with long prompts
