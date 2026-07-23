@@ -126,64 +126,41 @@ st.markdown(
     }
 
 
-    /* ========================================================
-       HERO SECTION
-    ======================================================== */
+# ============================================================
+# HERO SECTION
+# ============================================================
 
-    .hero {
-        padding: 3rem;
-        border-radius: 28px;
-        background: linear-gradient(
-            135deg,
-            #0f172a 0%,
-            #312e81 50%,
-            #4f46e5 100%
-        );
-        color: white;
-        margin-bottom: 2rem;
-        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.20);
-        position: relative;
-        overflow: hidden;
-    }
+st.markdown(
+    """
+    <div class="hero">
 
-    .hero::after {
-        content: "";
-        position: absolute;
-        width: 250px;
-        height: 250px;
-        right: -80px;
-        top: -80px;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 50%;
-    }
+        <div class="hero-badge">
+            ✨ AI-Powered Career Intelligence
+        </div>
 
-    .hero-badge {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.20);
-        padding: 0.45rem 0.9rem;
-        border-radius: 999px;
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
-        color: white;
-    }
+        <div class="hero-title">
+            📄 Resume Genie
+        </div>
 
-    .hero-title {
-        font-size: 3rem;
-        font-weight: 800;
-        margin: 0 0 0.8rem 0;
-        color: white;
-        line-height: 1.1;
-    }
+        <div class="hero-description">
+            Transform your resume into a powerful career tool.
+            Analyze your ATS compatibility, match your resume to
+            job opportunities, create tailored cover letters,
+            and get personalized career guidance.
+        </div>
 
-    .hero-description {
-        font-size: 1.1rem;
-        color: #e0e7ff;
-        max-width: 780px;
-        line-height: 1.7;
-        margin: 0;
-    }
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
+   # ============================================================
+# CUSTOM CSS
+# ============================================================
+
+st.markdown(
+    """
+    <style>
 
     /* ========================================================
        SERVICE CARD
@@ -216,6 +193,37 @@ st.markdown(
         margin-bottom: 0;
         line-height: 1.6;
     }
+
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+# ============================================================
+# SERVICE CARD
+# ============================================================
+
+st.markdown(
+    f"""
+    <div class="service-card">
+
+        <div class="service-icon">
+            {service["icon"]}
+        </div>
+
+        <div class="service-title">
+            {service_name}
+        </div>
+
+        <div class="service-description">
+            {service["description"]}
+        </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 
     /* ========================================================
