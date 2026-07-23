@@ -402,23 +402,20 @@ unsafe_allow_html=True,
 )
 
 # ============================================================
-
 # GOOGLE GEMINI API KEY
-
 # ============================================================
 
 try:
-GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+    GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 except Exception:
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 
 if not GOOGLE_API_KEY:
-st.error(
-"Google API key is not configured. "
-"Please add GOOGLE_API_KEY to your Streamlit secrets."
-)
-st.stop()
-
+    st.error(
+        "Google API key is not configured. "
+        "Please add GOOGLE_API_KEY to your Streamlit secrets."
+    )
+    st.stop()
 # ============================================================
 
 # LOAD GEMINI MODEL
