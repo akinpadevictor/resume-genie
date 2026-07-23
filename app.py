@@ -19,8 +19,27 @@ st.markdown("""
 .stApp { background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #f8fafc 100%); }
 .block-container { max-width: 1200px; padding-top: 2rem; padding-bottom: 4rem; }
 #MainMenu, footer { visibility: hidden; }
+
+/* SIDEBAR ONLY */
 section[data-testid="stSidebar"] { background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%); }
-section[data-testid="stSidebar"] * { color: white !important; }
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] label { color: white !important; }
+
+/* MAIN CONTENT - FORCE DARK TEXT */
+.main .markdown-text-container,
+.main h1, .main h2, .main h3, .main p, .main li, .main strong {
+    color: #111827 !important;
+}
+
+/* TABLES FROM LLM */
+.main table { color: #111827; }
+.main th { background: #f3f4f6; color: #111827; }
+.main td { color: #111827; }
+
 .hero { background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); padding: 3rem 2rem; border-radius: 24px; text-align: center; margin-bottom: 2rem; color: white; }
 .hero-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
 .hero-title { font-size: 2.8rem; font-weight: 800; margin: 0.5rem 0; }
@@ -29,7 +48,8 @@ section[data-testid="stSidebar"] * { color: white !important; }
 .service-icon { font-size: 2rem; } .service-title { font-size: 1.6rem; font-weight: 750; color: #111827; } .service-description { color: #64748b; }
 .section-title { font-size: 1.15rem; font-weight: 750; color: #111827; margin-top: 1.5rem; margin-bottom: 0.7rem; }
 .result-header { background: linear-gradient(135deg, #ecfdf5, #eff6ff); border: 1px solid #dbeafe; padding: 1.5rem 2rem; border-radius: 20px; margin-top: 2rem; }
-.info-card { background: white; border: 1px solid #e5e7eb; border-radius: 18px; padding: 1.5rem; }
+.info-card { background: white; border: 1px solid #e5e7eb; border-radius: 18px; padding: 1.5rem; color: #111827; }
+.info-card p, .info-card b { color: #111827 !important; }
 .footer { text-align: center; color: #64748b; padding: 3rem 0 1rem 0; }
 </style>
 """, unsafe_allow_html=True)
