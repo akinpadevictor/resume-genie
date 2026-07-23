@@ -416,22 +416,22 @@ if not GOOGLE_API_KEY:
         "Please add GOOGLE_API_KEY to your Streamlit secrets."
     )
     st.stop()
+
+
 # ============================================================
-
 # LOAD GEMINI MODEL
-
 # ============================================================
 
 @st.cache_resource
 def load_model():
-return ChatGoogleGenerativeAI(
-model="gemini-2.5-flash",
-google_api_key=GOOGLE_API_KEY,
-temperature=0.2,
-)
+    return ChatGoogleGenerativeAI(
+        model="gemini-2.5-flash",
+        google_api_key=GOOGLE_API_KEY,
+        temperature=0.2,
+    )
+
 
 chat = load_model()
-
 # ============================================================
 
 # EXTRACT RESUME TEXT
