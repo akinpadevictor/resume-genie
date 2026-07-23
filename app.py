@@ -45,8 +45,12 @@ if not GOOGLE_API_KEY:
     st.stop()
 
 @st.cache_resource
-def load_model():
-    return ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=GOOGLE_API_KEY, temperature=0.2)
+def load_model(api_key):
+    return ChatGoogleGenerativeAI(
+        model="gemini-2.5-flash",
+        google_api_key=api_key,
+        temperature=0.2,
+    )
 chat = load_model()
 
 @st.cache_data(show_spinner=False)
