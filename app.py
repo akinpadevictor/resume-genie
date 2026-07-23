@@ -45,13 +45,14 @@ if not GOOGLE_API_KEY:
     st.stop()
 
 @st.cache_resource
-def load_model(api_key):
+def load_model():
     return ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
-        google_api_key=api_key,
+        model="gemini-1.5-flash-latest",  # FIX 1: correct model name
+        google_api_key=GOOGLE_API_KEY,    # FIX 2: use the global var directly
         temperature=0.2,
+        convert_system_message_to_human=True # helps with long prompts
     )
-chat = load_model()
+chat = load_model() # FIX 3: no argument needed now
 
 @st.cache_data(show_spinner=False)
 def extract_resume(file_bytes):
